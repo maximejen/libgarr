@@ -24,7 +24,7 @@ add_library(libgarr
         garr_grow_capacity.c
         garr_prepend.c
         garr_insert.c
-        garr_pop.c garr_remove.c garr_concat.c garr_where.c garr_find.c garr_find_index.c)
+        garr_pop.c garr_remove.c garr_concat.c garr_where.c garr_find.c garr_find_index.c garr_sort.c garr_map.c garr_filter.c garr_for_each.c)
 
 add_executable(test_garr_lib
         garr_init.c

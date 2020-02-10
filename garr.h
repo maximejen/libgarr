@@ -20,6 +20,7 @@ typedef struct s_garr {
 
 
 typedef bool (*callback_func_t)(void *elem, size_t idx, void *ctx);
+typedef bool (*callback_cmp_func_t)(void *, idx_t , void *, idx_t);
 
 // Initialization
 garr_t  *garr_init(void);
@@ -67,9 +68,9 @@ idx_t	garr_find_index(garr_t *, callback_func_t, void *ctx);
 idx_t	garr_find_index_from_end(garr_t *, callback_func_t, void *ctx);
 
 // Array iteration
-garr_t  *garr_sort(garr_t *, callback_func_t);
-garr_t  *garr_map(garr_t *, callback_func_t);
-garr_t  *garr_filter(garr_t *, callback_func_t);
-void    garr_for_each(garr_t *, callback_func_t);
+garr_t  *garr_sort(garr_t *, callback_cmp_func_t);
+garr_t  *garr_map(garr_t *, callback_func_t, void *);
+garr_t  *garr_filter(garr_t *, callback_func_t, void *);
+void    garr_for_each(garr_t *, callback_func_t, void *);
 
 #endif //GARR_LIBRARY_H
