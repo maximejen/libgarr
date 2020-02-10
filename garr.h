@@ -8,30 +8,31 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef size_t idx_t;
-typedef size_t cap_t;
+typedef int _size_t;
+typedef int _cap_t;
+typedef int _idx_t;
 
 // Generic Array definition
 typedef struct s_garr {
-    size_t  size;
-    cap_t   capacity;
-    void    **arr;
+    _size_t   size;
+    _cap_t    capacity;
+    void        **arr;
 } garr_t;
 
 
-typedef bool (*callback_func_t)(void *elem, size_t idx, void *ctx);
-typedef bool (*callback_cmp_func_t)(void *, idx_t , void *, idx_t);
+typedef bool (*callback_func_t)(void *elem, _size_t idx, void *ctx);
+typedef bool (*callback_cmp_func_t)(void *, _idx_t , void *, _idx_t);
 
 // Initialization
 garr_t  *garr_init(void);
 garr_t  *garr_init_with_val(void *val);
-garr_t  *garr_with_capacity(size_t capacity);
+garr_t  *garr_with_capacity(_size_t capacity);
 garr_t  *garr_clone(garr_t *);
 
 // Item specific access
-bool    garr_set(garr_t *, idx_t, void *);
+bool    garr_set(garr_t *, _idx_t, void *);
 bool    garr_contains(garr_t *, void *);
-void	*garr_at(garr_t *self, idx_t);
+void	*garr_at(garr_t *self, _idx_t);
 void	*garr_first(garr_t *self);
 void	*garr_last(garr_t *self);
 
@@ -40,32 +41,32 @@ void    garr_clear(garr_t *, bool should_free_items);
 void    garr_destroy(garr_t *);
 
 // Getters
-size_t  garr_size(garr_t *);
-cap_t   garr_capacity(garr_t *);
-cap_t   garr_left_capacity(garr_t *);
+_size_t  garr_size(garr_t *);
+_cap_t   garr_capacity(garr_t *);
+_cap_t   garr_left_capacity(garr_t *);
 
 // Add & Remove elements
-size_t  garr_append(garr_t *, void *);
-size_t  garr_append_multiple(garr_t *, size_t nb, ...);
-size_t  garr_prepend(garr_t *, void *);
-size_t  garr_prepend_multiple(garr_t *, size_t nb, ...);
-bool    garr_insert(garr_t *, idx_t, void *);
+_size_t  garr_append(garr_t *, void *);
+_size_t  garr_append_multiple(garr_t *, _size_t nb, ...);
+_size_t  garr_prepend(garr_t *, void *);
+_size_t  garr_prepend_multiple(garr_t *, _size_t nb, ...);
+bool    garr_insert(garr_t *, _idx_t, void *);
 void	*garr_pop_front(garr_t *);
 void	*garr_pop_back(garr_t *);
-void    *garr_remove(garr_t *, size_t idx);
+void    *garr_remove(garr_t *, _size_t idx);
 
 // Affects array capacity
-bool    garr_reserve(garr_t *, cap_t);
+bool    garr_reserve(garr_t *, _cap_t);
 garr_t  *garr_concat(garr_t *, garr_t *);
-garr_t  *garr_grow_capacity(garr_t *, cap_t);
+garr_t  *garr_grow_capacity(garr_t *, _cap_t);
 
 // Find elements
-idx_t   garr_where(garr_t *, void *);
-idx_t   garr_where_from_end(garr_t *, void *);
+_idx_t   garr_where(garr_t *, void *);
+_idx_t   garr_where_from_end(garr_t *, void *);
 void    *garr_find(garr_t *, callback_func_t, void *ctx);
 void    *garr_find_from_end(garr_t *, callback_func_t, void *ctx);
-idx_t	garr_find_index(garr_t *, callback_func_t, void *ctx);
-idx_t	garr_find_index_from_end(garr_t *, callback_func_t, void *ctx);
+_idx_t	garr_find_index(garr_t *, callback_func_t, void *ctx);
+_idx_t	garr_find_index_from_end(garr_t *, callback_func_t, void *ctx);
 
 // Array iteration
 garr_t  *garr_sort(garr_t *, callback_cmp_func_t);

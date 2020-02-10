@@ -7,7 +7,7 @@
 
 #include "garr.h"
 
-void *garr_at(garr_t *self, idx_t idx)
+void *garr_at(garr_t *self, _idx_t idx)
 {
     if (!self || self->size == 0 || idx > self->size)
         return (NULL);

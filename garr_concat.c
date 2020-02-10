@@ -9,7 +9,7 @@
 
 garr_t *garr_concat(garr_t *self, garr_t *to_concat)
 {
-    size_t size;
+    _size_t size;
 
     if (!self && !to_concat)
         return (self);

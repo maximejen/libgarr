@@ -9,7 +9,7 @@
 
 void *garr_find(garr_t *self, callback_func_t func, void *ctx)
 {
-    size_t idx = 0;
+    _size_t idx = 0;
 
     if (!self || self->size == 0)
         return (0);
@@ -20,7 +20,7 @@ void *garr_find(garr_t *self, callback_func_t func, void *ctx)
 
 void *garr_find_from_end(garr_t *self, callback_func_t func, void *ctx)
 {
-    size_t idx;
+    _size_t idx;
 
     if (!self || self->size == 0)
         return (0);

@@ -9,11 +9,11 @@
 
 #include "garr.h"
 
-size_t garr_prepend_multiple(garr_t *self, size_t nb, ...)
+_size_t garr_prepend_multiple(garr_t *self, _size_t nb, ...)
 {
     va_list al;
-    size_t new_size;
-    size_t tsize = sizeof(void *);
+    _size_t new_size;
+    _size_t tsize = sizeof(void *);
 
     if (!self || nb == 0)
         return (-1);
@@ -23,16 +23,16 @@ size_t garr_prepend_multiple(garr_t *self, size_t nb, ...)
         return (-1);
     va_start(al, nb);
     memmove(self->arr + (tsize * nb), self->arr, self->size);
-    for (size_t i = (nb - 1); i >= 0; i--)
+    for (_size_t i = (nb - 1); i >= 0; i--)
         memmove(self->arr + (i * tsize), va_arg(al,void *), tsize);
     va_end(al);
     self->size = new_size;
     return (self->size);
 }
 
-size_t garr_prepend(garr_t *self, void *elem)
+_size_t garr_prepend(garr_t *self, void *elem)
 {
-    size_t new_size;
+    _size_t new_size;
 
     if (!self)
         return (-1);

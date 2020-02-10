@@ -7,9 +7,9 @@
 
 #include "garr.h"
 
-idx_t garr_find_index(garr_t *self, callback_func_t func, void *ctx)
+_idx_t garr_find_index(garr_t *self, callback_func_t func, void *ctx)
 {
-    size_t idx = 0;
+    _size_t idx = 0;
 
     if (!self || self->size == 0)
         return (0);
@@ -18,9 +18,9 @@ idx_t garr_find_index(garr_t *self, callback_func_t func, void *ctx)
     return ((idx < self->size) ? idx : -1);
 }
 
-idx_t garr_find_index_from_end(garr_t *self, callback_func_t func, void *ctx)
+_idx_t garr_find_index_from_end(garr_t *self, callback_func_t func, void *ctx)
 {
-    size_t idx;
+    _size_t idx;
 
     if (!self || self->size == 0)
         return (0);

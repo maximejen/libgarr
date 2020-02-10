@@ -10,7 +10,7 @@
 garr_t *garr_filter(garr_t *self, callback_func_t func, void *ctx)
 {
     if (self == 0) return (NULL);
-    for (size_t idx = 0; idx < self->size; idx++) {
+    for (_size_t idx = 0; idx < self->size; idx++) {
         if (!func(self->arr[idx], idx, ctx))
             garr_remove(self, idx);
     }

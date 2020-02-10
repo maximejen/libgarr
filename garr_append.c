@@ -9,11 +9,11 @@
 
 #include "garr.h"
 
-size_t garr_append_multiple(garr_t *self, size_t nb, ...)
+_size_t garr_append_multiple(garr_t *self, _size_t nb, ...)
 {
     va_list list;
-    size_t last_size;
-    size_t new_size;
+    _size_t last_size;
+    _size_t new_size;
 
     if (!self)
         return (-1);
@@ -23,15 +23,15 @@ size_t garr_append_multiple(garr_t *self, size_t nb, ...)
         return (-1);
     self->size = new_size;
     va_start(list, nb);
-    for (size_t i = last_size; i < new_size; i++)
+    for (_size_t i = last_size; i < new_size; i++)
         garr_set(self, i, va_arg(list, void *));
     va_end(list);
     return (self->size);
 }
 
-size_t garr_append(garr_t *self, void *elem)
+_size_t garr_append(garr_t *self, void *elem)
 {
-    size_t new_size;
+    _size_t new_size;
 
     if (!self)
         return (-1);

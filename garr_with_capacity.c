@@ -7,7 +7,7 @@
 
 #include "garr.h"
 
-garr_t *garr_with_capacity(size_t capacity)
+garr_t *garr_with_capacity(_size_t capacity)
 {
     garr_t *arr = garr_init();
 

@@ -7,7 +7,7 @@
 
 #include "garr.h"
 
-cap_t garr_capacity(garr_t *self)
+_cap_t garr_capacity(garr_t *self)
 {
     return (self ? self->capacity : 0);
 }

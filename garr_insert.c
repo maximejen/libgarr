@@ -8,9 +8,9 @@
 #include <stdio.h>
 #include "garr.h"
 
-bool garr_insert(garr_t *self, idx_t idx, void *elem)
+bool garr_insert(garr_t *self, _idx_t idx, void *elem)
 {
-    size_t size;
+    _size_t size;
 
     if (!self || idx > self->size)
         return (false);

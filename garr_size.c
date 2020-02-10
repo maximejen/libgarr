@@ -7,7 +7,7 @@
 
 #include "garr.h"
 
-size_t garr_size(garr_t *self)
+_size_t garr_size(garr_t *self)
 {
     return (self ? self->size : 0);
 }

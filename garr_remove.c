@@ -7,7 +7,7 @@
 
 #include "garr.h"
 
-void *garr_remove(garr_t *self, size_t idx)
+void *garr_remove(garr_t *self, _size_t idx)
 {
     void *s;
 

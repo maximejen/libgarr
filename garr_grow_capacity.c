@@ -7,7 +7,7 @@
 
 #include "garr.h"
 
-static cap_t calculate_grow_value(cap_t capacity)
+static _cap_t calculate_grow_value(_cap_t capacity)
 {
     capacity -= 1;
     capacity |= capacity >> 1;
@@ -19,7 +19,7 @@ static cap_t calculate_grow_value(cap_t capacity)
     return (capacity + 1);
 }
 
-garr_t *garr_grow_capacity(garr_t *self, cap_t capacity)
+garr_t *garr_grow_capacity(garr_t *self, _cap_t capacity)
 {
     bool ret = garr_reserve(self, calculate_grow_value(self->size + capacity));
 

@@ -11,9 +11,9 @@ static bool garr_sort_helper(garr_t *self, callback_cmp_func_t func)
 {
     bool done = true;
     void *tmp;
-    size_t before_last = self->size - 1;
+    _size_t before_last = self->size - 1;
 
-    for (size_t idx = 0; idx < before_last; idx++)
+    for (_size_t idx = 0; idx < before_last; idx++)
         if (func(self->arr[idx], idx, self->arr[idx + 1], idx + 1) > 0) {
             done = false;
             tmp = self->arr[idx];

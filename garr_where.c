@@ -7,9 +7,9 @@
 
 #include "garr.h"
 
-idx_t garr_where(garr_t *self, void *elem)
+_idx_t garr_where(garr_t *self, void *elem)
 {
-    idx_t i;
+    _idx_t i;
 
     if (!self)
         return (-1);
@@ -17,9 +17,9 @@ idx_t garr_where(garr_t *self, void *elem)
     return (self->arr[i] == elem ? i : -1);
 }
 
-idx_t garr_where_from_end(garr_t *self, void *elem)
+_idx_t garr_where_from_end(garr_t *self, void *elem)
 {
-    idx_t i;
+    _idx_t i;
 
     if (!self)
         return (-1);

@@ -16,6 +16,6 @@ garr_t *garr_clone(garr_t *to_copy)
     arr = garr_with_capacity(to_copy->capacity);
     if (!arr)
         return (NULL);
-    memmove(arr, to_copy, (2 * sizeof(size_t) + to_copy->size));
+    memmove(arr, to_copy, (2 * sizeof(_size_t) + to_copy->size));
     return (arr);
 }

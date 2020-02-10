@@ -7,7 +7,7 @@
 
 #include "garr.h"
 
-bool garr_reserve(garr_t *self, cap_t capacity)
+bool garr_reserve(garr_t *self, _cap_t capacity)
 {
     void **new_values = NULL;
 
