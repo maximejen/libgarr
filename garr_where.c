@@ -5,7 +5,7 @@
 **
 */
 
-#include "garr.h"
+#include "include/garr.h"
 
 _idx_t garr_where(garr_t *self, void *elem)
 {

@@ -5,7 +5,7 @@
 **
 */
 
-#include "garr.h"
+#include "include/garr.h"
 
 _idx_t garr_find_index(garr_t *self, callback_func_t func, void *ctx)
 {

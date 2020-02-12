@@ -7,7 +7,7 @@
 
 #include <criterion/criterion.h>
 #include <stdbool.h>
-#include "../garr.h"
+#include "../include/garr.h"
 
 Test(garr_init, garr_init) {
     garr_t *arr = garr_init();

@@ -4,7 +4,7 @@ project(libgarr C)
 set(CMAKE_C_STANDARD 11)
 
 add_library(libgarr
-        garr.h
+        include/garr.h
         garr_init.c
         garr_init_with_value.c
         garr_reserve.c

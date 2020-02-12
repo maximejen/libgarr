@@ -6,7 +6,7 @@
 */
 
 #include <stdio.h>
-#include "garr.h"
+#include "include/garr.h"
 
 bool garr_insert(garr_t *self, _idx_t idx, void *elem)
 {
